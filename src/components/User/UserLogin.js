@@ -1,0 +1,26 @@
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+
+const UserLogin = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Add login logic here
+  };
+
+  return (
+    <div>
+      <h2>User Login</h2>
+      <form onSubmit={handleSubmit}>
+        <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
+        <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
+        <button type="submit">Login</button>
+      </form>
+      <p>New here? <Link to="/user/signup">Sign up</Link></p>
+    </div>
+  );
+}
+
+export default UserLogin;
